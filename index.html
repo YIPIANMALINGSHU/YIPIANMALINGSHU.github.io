@@ -1,8 +1,115 @@
 <!DOCTYPE html>
-    <head>
-        <title>Hello,World</title>
-    </head>
-    <body>
-        <h1>Hello,World</h1>
-    </body>
+<html lang="zh-CN">
+<style>
+	.b-img {
+    background-attachment: fixed;
+    background-image: url(https://z3.ax1x.com/2021/05/16/gcdT2D.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+    height: 100%;
+    left: 0;
+    opacity: .5;
+    position: fixed;
+    top: 0;
+    transform: scale(1.1);
+    width: 100%;
+    z-index: -1;
+}
+</style>
+<head>
+	<meta charset="utf-8">
+	<title>nice的网站</title>
+	<link rel="stylesheet" href="template">
+</head>
+<body>
+	<img src="https://z3.ax1x.com/2021/05/16/gcKS8P.jpg" alt="Pulpit rock" width="356" height="256">
+	<img src="https://z3.ax1x.com/2021/05/17/gWuJBT.jpg" alt="Pulpit rock" width="356" height="256">
+	<div class="b-img"></div>
+	<body background="https://z3.ax1x.com/2021/05/16/gcdT2D.jpg">
+		<h2>一片马铃薯的网站</h2>
+		<p>马铃薯真不错</p>
+	<main>
+	</main>
+</body>
 </html>
+<script language="JavaScript">
+<!--
+if (window.Event)
+document.captureEvents(Event.MOUSEUP);
+function nocontextmenu()
+{
+event.cancelBubble = true
+event.returnValue = false;
+return false;
+}
+function norightclick(e)
+{if (window.Event)
+{
+if (e.which == 2 || e.which == 3)
+return false;
+}
+else
+if (event.button == 2 || event.button == 3)
+{
+event.cancelBubble = true
+event.returnValue = false;
+return false;
+}
+}
+document.oncontextmenu = nocontextmenu; // for IE5+
+document.onmousedown = norightclick; // for all others
+//-->
+</script>
+<script>
+document.onkeydown = function(){
+  if (event.ctrlKey && window.event.keyCode==85){
+  return false;
+  }
+  }
+</script>
+<script>
+document.onkeydown = function(){
+  //禁止 F12
+  if (window.event && window.event.keyCode == 123) {
+  event.keyCode = 0;
+  event.returnValue = false;
+  }
+  }
+</script>
+<script type="text/javascript">
+function searchToggle(obj, evt){
+var container = $(obj).closest('.search-wrapper');
+
+if(!container.hasClass('active')){
+ container.addClass('active');
+ evt.preventDefault();
+}
+else if(container.hasClass('active') && $(obj).closest('.input-holder').length == 0){
+ container.removeClass('active');
+ // clear input
+ container.find('.search-input').val('');
+ // clear and hide result container when we press close
+ container.find('.result-container').fadeOut(100, function(){$(this).empty();});
+}
+}
+
+function submitFn(obj, evt){
+value = $(obj).find('.search-input').val().trim();
+
+_html = "Yup yup! Your search text sounds like this: ";
+if(!value.length){
+_html = "Yup yup! Add some text friend :D";
+}
+else{
+_html += "<b>" + value + "</b>";
+}
+
+$(obj).find('.result-container').html('<span>' + _html + '</span>');
+$(obj).find('.result-container').fadeIn(100);
+
+evt.preventDefault();
+}
+</script>
